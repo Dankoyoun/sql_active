@@ -29,3 +29,19 @@ AND refresh_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
 group by 1
 LIMIT 25
 
+-- //////////////////////////////////////////////////////////////////////////////////////////////////////
+SELECT 
+	total AS Count
+	, COUNT(*) AS count_total
+	, 'Invoice total' AS total
+FROM Invoice i 
+GROUP BY 1
+	
+UNION
+
+SELECT 
+	unitprice AS Count
+	, COUNT(*) AS count_prise
+	, 'Track unitprice' AS unitprice
+FROM Track t  
+GROUP BY 1
