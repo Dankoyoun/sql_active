@@ -6,7 +6,7 @@
   <img
     src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=F751A0&background=FFFFFF00&width=300&lines=Computer+science+student"
     alt="Typing SVG"
-    style="display: block; margin-left: auto; margin-right: 20px; width: 300px;"
+    style="display: block; margin-left: auto; margin-right: 20px; width: 100px;"
   />
 </p>
 <h3 align="center">Welcome to my journey of growth from Ukraine <img src="https://flagcdn.com/ua.svg" alt="Ukraine" style="height:20px; vertical-align:middle;" />
