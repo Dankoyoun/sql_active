@@ -6,7 +6,7 @@
   <img 
     src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&size=25&pause=1000&color=F751A0&background=FFFFFF00&width=435&lines=Computer+science+student" 
     alt="Typing SVG" 
-    style="display: block; margin: 0 auto; transform: translateX(50px);"
+    style="display: block; margin: 1 auto; transform: translateX(50px);"
   />
 </p>
 
