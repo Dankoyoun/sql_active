@@ -37,7 +37,9 @@
 - Задача: найти профессии, в названии которых встречается слово "Engineer".  
   SELECT *  
   FROM salaries  
-  WHERE REGEXP_LIKE(job_title, 'Engineer');
+  WHERE REGEXP_LIKE(job_title, 'Engineer');  
+
+
 | SQL-запрос                                             |
 |-------------------------------------------------------|
 | SELECT *                                              |
