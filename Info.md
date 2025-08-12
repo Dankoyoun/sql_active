@@ -62,7 +62,7 @@
 | FROM salaries;                                             |  
 
 ```
-s = "regexp_substr работает только с текстом (string / varchar), А work_year у тебя — целое число (integer), и PostgreSQL не может автоматически преобразовать"
+regexp_substr работает только с текстом (string / varchar), А work_year у тебя — целое число (integer), и PostgreSQL не может автоматически преобразовать"
 ```  
 
 
