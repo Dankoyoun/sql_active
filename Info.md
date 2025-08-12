@@ -55,11 +55,12 @@
 3. REGEXP_SUBSTR — извлечение подстроки
 - Задача: вытащить только год из work_year (если бы он был в формате YYYY-MM-DD).  
 
-| REGEXP_SUBSTR                                               |
-|------------------------------------------------------------|
-| SELECT work_year,                                          |
-| REGEXP_SUBSTR(work_year, '^[0-9]{4}') AS year_only         |
-| FROM salaries;                                             |  
+| REGEXP_SUBSTR                                                     |
+|------------------------------------------------------------------|
+| SELECT work_year,                                                |
+| ~~REGEXP_SUBSTR(work_year, '^[0-9]{4}') AS year_only~~           |
+| REGEXP_SUBSTR(CAST(work_year AS TEXT), '^[0-9]{4}') AS year_only |
+| FROM salaries;                                                   |  
 
 ```
 regexp_substr работает только с текстом (string / varchar), А work_year  — целое число (integer), и PostgreSQL не может автоматически преобразовать.
