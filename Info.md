@@ -33,28 +33,44 @@
 
 # SQL Регулярные выражения и операторы (PostgreSQL)
 
-| Функция / Оператор           | Что делает                                   | Пример запроса (PostgreSQL)                                                                                          | Результат                                                    |
-|-----------------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| `~`                         | Проверяет соответствие шаблону               | ```sql                                                                                                              
-SELECT * FROM salaries WHERE job_title ~ 'Engineer';                                                                      
-```                                                                                                                    | Выбирает строки, где в `job_title` есть "Engineer"            |
-| `REGEXP_REPLACE`             | Заменяет часть строки по шаблону             | ```sql                                                                                                              
-SELECT job_title, REGEXP_REPLACE(job_title, 'Senior ', '') AS cleaned_title FROM salaries;                               
-```                                                                                                                    | Удаляет из `job_title` слово "Senior "                        |
-| `SUBSTRING(... FROM regex)`  | Извлекает подстроку по регулярному выражению| ```sql                                                                                                              
-SELECT work_year, SUBSTRING(work_year::text FROM '^[0-9]{4}') AS year_only FROM salaries;                                
-```                                                                                                                    | Извлекает первые 4 цифры из `work_year` (приведённого к тексту) |
-| `STRPOS`                    | Находит позицию подстроки                     | ```sql                                                                                                              
-SELECT job_title, STRPOS(job_title, 'Manager') AS position FROM salaries;                                               
-```                                                                                                                    | Позиция первого вхождения "Manager" или 0                    |
-| Подсчёт вхождений символа   | Считает количество вхождений символа          | ```sql                                                                                                              
-SELECT job_title, LENGTH(LOWER(job_title)) - LENGTH(REPLACE(LOWER(job_title), 'e', '')) AS e_count FROM salaries;         
-```                                                                                                                    | Кол-во букв "e" в `job_title`                                |
-| `SIMILAR TO`                | Проверяет шаблон, похожий на LIKE             | ```sql                                                                                                              
-SELECT * FROM salaries WHERE job_title SIMILAR TO '(Data|Machine)%';                                                        
-```                                                                                                                    | Выбирает должности, начинающиеся с "Data" или "Machine"      |
+-- 1. REGEXP_LIKE — проверка соответствия
+SELECT *
+FROM salaries
+WHERE REGEXP_LIKE(job_title, 'Engineer');
 
----
+-- 2. REGEXP_REPLACE — замена по шаблону
+SELECT job_title,
+       REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title
+FROM salaries;
+ 
+-- 3. REGEXP_SUBSTR — извлечение подстроки
 
-💡 *Примечание:* PostgreSQL использует оператор `~` для проверки по regex, а некоторые функции (например, `REGEXP_SUBSTR` или `REGEXP_COUNT`) реализуются через другие конструкции.
+SELECT work_year,
+       REGEXP_SUBSTR(work_year, '^[0-9]{4}') AS year_only
+FROM salaries;
+
+--|regexp_substr работает только с текстом (string / varchar), А work_year у тебя — целое число (integer), и PostgreSQL не может автоматически преобразовать.|
+
+SELECT work_year,
+       REGEXP_SUBSTR (CAST(work_year AS TEXT),  '^[0-9]{4}') AS year_only
+FROM salaries;
+
+
+-- 4. REGEXP_INSTR — найти позицию совпадения
+
+SELECT distinct job_title,
+       REGEXP_INSTR(job_title, 'Manager') AS position
+FROM salaries;
+
+-- 5. REGEXP_COUNT — количество совпадений
+
+SELECT job_title,
+       REGEXP_COUNT(LOWER(job_title), 'e') AS e_count
+FROM salaries;
+
+-- 6. SIMILAR TO — упрощённая проверка шаблона
+
+SELECT *
+FROM salaries
+WHERE job_title SIMILAR TO '(Data|Machine)%';
 
