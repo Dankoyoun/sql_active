@@ -96,6 +96,3 @@
 | WHERE job_title SIMILAR TO '(Data|Machine)%';  | 
 
 
-
-<img width="231" height="158" alt="image" src="https://github.com/user-attachments/assets/07d2db5f-c8f6-4ff5-b9c1-0476369b738f" />
-
