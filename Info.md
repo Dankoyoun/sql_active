@@ -63,9 +63,9 @@
 | FROM salaries;                                                   |  
 
 
-> regexp_substr работает только с текстом (string / varchar) 
-> А work_year  — целое число (integer), и PostgreSQL не может автоматически преобразовать.
-> **Поэтому добавляем Cast**
+> regexp_substr работает только с текстом (string / varchar)   
+> А work_year  — целое число (integer), и PostgreSQL не может автоматически преобразовать.  
+> **Поэтому добавляем Cast**  
 
 
 4. REGEXP_INSTR — найти позицию совпадения    
