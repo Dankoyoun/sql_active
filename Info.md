@@ -61,9 +61,8 @@
 | REGEXP_SUBSTR(work_year, '^[0-9]{4}') AS year_only         |
 | FROM salaries;                                             |  
 
-```python
+```
 s = "regexp_substr работает только с текстом (string / varchar), А work_year у тебя — целое число (integer), и PostgreSQL не может автоматически преобразовать"
-print s
 ```  
 
 
