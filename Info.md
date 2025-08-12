@@ -63,37 +63,34 @@
 | FROM salaries;                                                   |  
 
 ```
-regexp_substr работает только с текстом (string / varchar), А work_year  — целое число (integer), и PostgreSQL не может автоматически преобразовать.
+regexp_substr работает только с текстом (string / varchar) 
+А work_year  — целое число (integer), и PostgreSQL не может автоматически преобразовать.
 **Поэтому добавляем Cast**
 ```  
 
+4. REGEXP_INSTR — найти позицию совпадения    
+- Задача: узнать, на какой позиции встречается слово "Manager" в должности.
+ 
+| REGEXP_INSTR                                    |
+|------------------------------------------------|
+| SELECT distinct job_title,                     |
+| REGEXP_INSTR(job_title, 'Manager') AS position |
+| FROM salaries;                                 |    
 
+5. REGEXP_COUNT — количество совпадений
+- Задача: сколько раз в названии должности встречается буква "e" (без учёта регистра).
+  
+| REGEXP_COUNT                                   |
+|------------------------------------------------|
+| SELECT job_title,                              |
+| REGEXP_COUNT(LOWER(job_title), 'e') AS e_count |
+| FROM salaries;                                 |  
 
-
-
-
-
-
-SELECT work_year,
-       REGEXP_SUBSTR (CAST(work_year AS TEXT),  '^[0-9]{4}') AS year_only
-FROM salaries;
-
-
--- 4. REGEXP_INSTR — найти позицию совпадения
-
-SELECT distinct job_title,
-       REGEXP_INSTR(job_title, 'Manager') AS position
-FROM salaries;
-
--- 5. REGEXP_COUNT — количество совпадений
-
-SELECT job_title,
-       REGEXP_COUNT(LOWER(job_title), 'e') AS e_count
-FROM salaries;
-
--- 6. SIMILAR TO — упрощённая проверка шаблона
-
-SELECT *
-FROM salaries
-WHERE job_title SIMILAR TO '(Data|Machine)%';
-
+6. SIMILAR TO — упрощённая проверка шаблона
+- Задача: найти все должности, начинающиеся на "Data" или "Machine".
+  
+| REGEXP_COUNT                                   |
+|------------------------------------------------|
+| SELECT *                                       |
+| FROM salaries                                  |
+| WHERE job_title SIMILAR TO '(Data|Machine)%';  | 
