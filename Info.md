@@ -44,9 +44,13 @@
 
 
 3. REGEXP_REPLACE — замена по шаблону
-  SELECT job_title,  
-  REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title  
-  FROM salaries;
+- Задача: убрать слово "Senior" из названия должности.
+ | REGEXP_LIKE                                            |
+|-------------------------------------------------------|
+| SELECT job_title,                                             |
+|  REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title                                      |
+|  FROM salaries;           |
+
  
 -- 3. REGEXP_SUBSTR — извлечение подстроки
 
