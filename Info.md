@@ -34,12 +34,8 @@
 # SQL Регулярные выражения и операторы (PostgreSQL)
 
 1. REGEXP_LIKE — проверка соответствия
-- Задача: найти профессии, в названии которых встречается слово "Engineer".  
-  SELECT *  
-  FROM salaries  
-  WHERE REGEXP_LIKE(job_title, 'Engineer');  
-
-
+- Задача: найти профессии, в названии которых встречается слово "Engineer".    
+  
 | REGEXP_LIKE                                            |
 |-------------------------------------------------------|
 | SELECT *                                              |
@@ -47,15 +43,10 @@
 | WHERE REGEXP_LIKE(job_title, 'Engineer');             |
 
 
-
-
-
-
-
 3. REGEXP_REPLACE — замена по шаблону
-SELECT job_title,
-       REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title
-FROM salaries;
+  SELECT job_title,  
+  REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title  
+  FROM salaries;
  
 -- 3. REGEXP_SUBSTR — извлечение подстроки
 
