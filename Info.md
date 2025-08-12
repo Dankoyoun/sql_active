@@ -38,6 +38,17 @@
   SELECT *  
   FROM salaries  
   WHERE REGEXP_LIKE(job_title, 'Engineer');
+| SQL-запрос                                             |
+|-------------------------------------------------------|
+| SELECT *                                              |
+| FROM salaries                                         |
+| WHERE REGEXP_LIKE(job_title, 'Engineer');             |
+
+
+
+
+
+
 
 3. REGEXP_REPLACE — замена по шаблону
 SELECT job_title,
