@@ -36,7 +36,7 @@
 1. REGEXP_LIKE — проверка соответствия
 - Задача: найти профессии, в названии которых встречается слово "Engineer".  
   SELECT *  
-  FROM salaries
+  FROM salaries  
   WHERE REGEXP_LIKE(job_title, 'Engineer');
 
 3. REGEXP_REPLACE — замена по шаблону
