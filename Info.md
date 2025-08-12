@@ -40,7 +40,7 @@
   WHERE REGEXP_LIKE(job_title, 'Engineer');  
 
 
-| SQL-запрос                                             |
+| REGEXP_LIKE                                            |
 |-------------------------------------------------------|
 | SELECT *                                              |
 | FROM salaries                                         |
