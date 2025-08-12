@@ -33,12 +33,12 @@
 
 # SQL Регулярные выражения и операторы (PostgreSQL)
 
--- 1. REGEXP_LIKE — проверка соответствия
+1. REGEXP_LIKE — проверка соответствия
 SELECT *
 FROM salaries
 WHERE REGEXP_LIKE(job_title, 'Engineer');
 
--- 2. REGEXP_REPLACE — замена по шаблону
+2. REGEXP_REPLACE — замена по шаблону
 SELECT job_title,
        REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title
 FROM salaries;
