@@ -7,16 +7,16 @@
 1️⃣ B-Tree (по умолчанию)
 💡 Хорош для =, <, >, BETWEEN, сортировки.  
   > - Индекс для поиска по возрасту   
-  > CREATE INDEX idx_customer_age ON customer(age);  
+  > _CREATE INDEX idx_customer_age ON customer(age);_   
   > - Использование  
-  > SELECT * FROM customer WHERE age BETWEEN 20 AND 30;  
+  > _SELECT * FROM customer WHERE age BETWEEN 20 AND 30;_    
 
 2️⃣ Hash Index
 💡 Быстрый поиск по точному равенству (=), но только для =.      
 > - Индекс для поиска по имени  
-> CREATE INDEX idx_customer_name_hash ON customer USING hash(name);  
+> _CREATE INDEX idx_customer_name_hash ON customer USING hash(name);_    
 > Использование:  
-> SELECT * FROM customer WHERE name = 'Danya';  
+> _SELECT * FROM customer WHERE name = 'Danya';_    
   
 ```
 > ⚠️ Обычно B-Tree почти всегда быстрее и универсальнее, но Hash иногда чуть быстрее на огромных данных с только =.
