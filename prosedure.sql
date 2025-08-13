@@ -1,4 +1,4 @@
-1️⃣ INSERT
+1.  INSERT
 
 -- Процедура для добавления нового клиента
 CREATE PROCEDURE customer_insert(
@@ -18,7 +18,7 @@ $$;
 CALL customer_insert(1, 'Danya', 25, 'Male');
 
 
-2️⃣ SELECT (через функцию, т.к. процедуры не возвращают данные напрямую)
+2. SELECT (через функцию, т.к. процедуры не возвращают данные напрямую)
 
 -- Функция для получения всех клиентов
 CREATE FUNCTION customer_select_all()
@@ -36,7 +36,7 @@ $$;
 
 SELECT * FROM customer_select_all();
 
-3️⃣ UPDATE
+3. UPDATE
 
 -- Процедура для обновления данных клиента
 CREATE PROCEDURE customer_update(
@@ -58,7 +58,7 @@ $$;
 
 CALL customer_update(1, 'DanyaPro', 26, 'Male');
 
-4️⃣ DELETE
+4. DELETE
 
 -- Процедура для удаления клиента по ID
 CREATE PROCEDURE customer_delete(
