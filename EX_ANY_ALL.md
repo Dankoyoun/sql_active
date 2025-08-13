@@ -1,4 +1,4 @@
--- Вывести имена артистов у которых в альбоме есть слово 'Rock'
+- Вывести имена артистов у которых в альбоме есть слово 'Rock'
 
 SELECT   
     Name  
@@ -10,7 +10,7 @@ WHERE EXISTS (
     AND al.Title LIKE "%Rock%"  
 );  
 
--- Задача: Найти треки, цена которых выше хотя бы одной цены треков из альбома "Let There Be Rock".  
+- Задача: Найти треки, цена которых выше хотя бы одной цены треков из альбома "Let There Be Rock".  
 
 SELECT Name, UnitPrice  
 FROM Track  
@@ -22,7 +22,7 @@ WHERE UnitPrice > ANY (
 )  
 ORDER BY UnitPrice DESC;  
 
--- Задача: Найти треки, цена которых выше всех цен треков из альбома "Let There Be Rock".  
+- Задача: Найти треки, цена которых выше всех цен треков из альбома "Let There Be Rock".  
 
 SELECT Name, UnitPrice  
 FROM Track  
