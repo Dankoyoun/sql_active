@@ -35,5 +35,5 @@
   
 - GIN индекс по массиву  
 > CREATE INDEX idx_product_tags ON product USING gin(tags);  
-- Использование:  
+- Использование  
 > SELECT * FROM product WHERE tags @> ARRAY['electronics']  
