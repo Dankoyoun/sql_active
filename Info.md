@@ -1,8 +1,9 @@
 <img width="844" height="359" alt="image" src="https://github.com/user-attachments/assets/3d663503-db1d-401f-b417-24cfd9a5302e" />  
 <img width="826" height="151" alt="image" src="https://github.com/user-attachments/assets/c17bc8b1-3662-42b6-8a30-0c72fdacf961" />  
-  DEFAULT используется, чтобы задать значение по умолчанию для колонки, если при вставке записи не указано конкретное значение.    
-  > country VARCHAR(50) DEFAULT 'Ukraine',  -- если не указано, будет 'Ukraine'  
-  > created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- текущее время по умолчанию  
+
+  DEFAULT используется, чтобы задать значение по умолчанию для колонки, если при вставке записи не указано конкретное значение.      
+  > country VARCHAR(50) DEFAULT 'Ukraine',  -- если не указано, будет 'Ukraine'    
+  > created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- текущее время по умолчанию    
  
 # CAST
 
