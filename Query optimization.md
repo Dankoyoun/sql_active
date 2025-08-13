@@ -27,13 +27,13 @@
 4️⃣ BRIN (Block Range Index)
 💡 Эффективен для очень больших таблиц с последовательными значениями (например, по дате).  
 
-> - Пример: у нас есть колонка tags типа text[]  
->CREATE TABLE product (  
+- Пример: у нас есть колонка tags типа text[]  
+> CREATE TABLE product (  
 >    id SERIAL PRIMARY KEY,  
 >   name TEXT,  
 >    tags TEXT[] );  
   
-> - GIN индекс по массиву  
+- GIN индекс по массиву  
 > CREATE INDEX idx_product_tags ON product USING gin(tags);  
 
 > SELECT * FROM product WHERE tags @> ARRAY['electronics']  
