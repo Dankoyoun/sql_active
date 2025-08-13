@@ -3,7 +3,7 @@ create table users (
  name VARCHAR(50),
  age INT
 )
-
+______________________________________
 
 insert into users (usersid, name, age)
 values
@@ -11,24 +11,24 @@ values
 	(2, 'Nastya', 25),
 	(3, 'Vanya', 30);
 
-	
-select *
-from users
-
+______________________________________
 
 update users
 set age = 22
 where usersid = 1
 
-
+______________________________________
+	
 delete
 from users 
 where usersid = 2
 
+______________________________________
 
 alter table users
 add email varchar(100)
-
+______________________________________
+	
 alter table users 
 drop column email
 
