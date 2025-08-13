@@ -1,3 +1,22 @@
+_______________________________________
+alter table customer                  |
+add email VARCHAR(100)                |
+                                      |
+alter table customer                  |
+rename column email to Gmail          |
+                                      |
+create table Employee(                |
+ID INT primary key unique,            |
+first_name VARCHAR(50) ,              |
+last_name VARCHAR(50) ,               |
+Age INT,                              |
+check (AGE>=18)                       |
+)                                     |
+_______________________________________
+
+
+
+
 create table users (
  usersid INT primary key,
  name VARCHAR(50),
