@@ -61,4 +61,16 @@ INSERT INTO AlbumCopy (AlbumId, Title, ArtistId)
 SELECT AlbumId, Title, ArtistId  
 FROM Album  
 JOIN Artist ON Album.ArtistId = Artist.ArtistId   
-WHERE Artist.Name = 'AC/DC';        
+WHERE Artist.Name = 'AC/DC';          
+
+Select BillingAddress   
+, BillingCity   
+, BillingState   
+FROM invoice  
+ORDER BY  
+(CASE  
+	WHEN BillingState IS NOT NULL THEN BillingCity   
+	ELSE BillingState  
+END  
+);  
+
