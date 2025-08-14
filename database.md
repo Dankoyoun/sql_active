@@ -46,4 +46,19 @@
 | SQL Functions / Procedures | Хранимые процедуры и функции | `CREATE FUNCTION get_customers() RETURNS TABLE(id INT, name VARCHAR) AS $$ SELECT id, name FROM customer; $$ LANGUAGE sql;` |
 | SQL Injection | Уязвимость при вводе вредного кода | Использовать подготовленные выражения: `PREPARE stmt AS SELECT * FROM customer WHERE name=$1;` |
 | SQL Hosting | Размещение PostgreSQL базы на сервере | `AWS RDS, Heroku Postgres, локальный сервер` |
-| SQL Data Types | Типы данных: числа, текст, даты, логические значения | `INT, SERIAL, VARCHAR, TEXT, BOOLEAN, DATE, TIMESTAMP, DECIMAL(10,2)` |  
+| SQL Data Types | Типы данных: числа, текст, даты, логические значения | `INT, SERIAL, VARCHAR, TEXT, BOOLEAN, DATE, TIMESTAMP, DECIMAL(10,2)` |    
+
+> В AlbumCopy появятся все альбомы AC/DC.      
+> Данные взяты прямо из запроса SELECT.  
+
+CREATE TABLE AlbumCopy (  
+    AlbumId INTEGER,  
+    Title TEXT,  
+    ArtistId INTEGER  );  
+Скопируем все альбомы группы AC/DC:  
+
+INSERT INTO AlbumCopy (AlbumId, Title, ArtistId)  
+SELECT AlbumId, Title, ArtistId  
+FROM Album  
+JOIN Artist ON Album.ArtistId = Artist.ArtistId   
+WHERE Artist.Name = 'AC/DC';        
