@@ -1,11 +1,11 @@
-🔹 1. Работа с базами и схемами
- • CREATE DATABASE имя;
- • ALTER DATABASE имя ...;
- • DROP DATABASE имя;
- • CREATE SCHEMA имя;
- • ALTER SCHEMA имя ...;
- • DROP SCHEMA имя [CASCADE];
- • SET search_path TO schema; (смена схемы)
+🔹 1. Работа с базами и схемами  
+ • CREATE DATABASE имя;  
+ • ALTER DATABASE имя ...;  
+ • DROP DATABASE имя;  
+ • CREATE SCHEMA имя;  
+ • ALTER SCHEMA имя ...;  
+ • DROP SCHEMA имя [CASCADE];  
+ • SET search_path TO schema; (смена схемы)  
 
 ⸻
 
