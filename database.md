@@ -63,9 +63,7 @@ FROM Album
 JOIN Artist ON Album.ArtistId = Artist.ArtistId   
 WHERE Artist.Name = 'AC/DC';          
 
-Select BillingAddress   
-, BillingCity   
-, BillingState   
+Select BillingAddress  , BillingCity  , BillingState     
 FROM invoice  
 ORDER BY  
 (CASE  
