@@ -20,7 +20,7 @@
 2. REGEXP_REPLACE — замена по шаблону
 - Задача: убрать слово "Senior" из названия должности.  
 
-| REGEXP_LIKE                                                  |
+| REGEXP_REPLACE                                                  |
 |-------------------------------------------------------------|
 | SELECT job_title,                                           |
 |  REGEXP_REPLACE(job_title, 'Scientist', '') AS cleaned_title|
