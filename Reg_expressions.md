@@ -69,3 +69,5 @@
 | SELECT *                                       |
 | FROM salaries                                  |
 | WHERE job_title SIMILAR TO '(Data|Machine)%';  |  
+
+  
